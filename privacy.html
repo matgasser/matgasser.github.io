@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Space Roles Manager — Privacy Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         max-width: 820px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; color: #1a1a1a; background: #fff; }
+  @media (prefers-color-scheme: dark) { body { color: #e6e6e6; background: #121212; } a { color: #6db3ff; } code { background:#222; } th { background:#1d1d1d; } td,th{border-color:#333;} }
+  h1 { font-size: 1.9rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.2rem; border-bottom: 1px solid #e2e2e2; padding-bottom: .3rem; }
+  .updated { color: #666; font-size: .9rem; margin-top: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid #ddd; padding: .5rem .65rem; text-align: left; vertical-align: top; }
+  th { background: #f5f5f5; }
+  code { background: #f2f2f2; padding: .1rem .35rem; border-radius: 4px; font-size: .9em; }
+  nav a { margin-right: 1rem; }
+  footer { margin-top: 3rem; color: #777; font-size: .85rem; border-top: 1px solid #e2e2e2; padding-top: 1rem; }
+</style>
+</head>
+<body>
+<nav><a href="./index.html">Home</a><a href="./privacy.html">Privacy Policy</a><a href="./security.html">Security Policy</a></nav>
+
+<h1>Privacy Policy — Space Roles Manager</h1>
+<p class="updated">Last updated: 23 June 2026</p>
+
+<p>Space Roles Manager is an Atlassian Forge app for Confluence Cloud, developed and operated by
+<strong>the Lumas Forgery team</strong> ("we", "us"). This policy explains what data the app
+processes, why, how it is stored and shared, which subprocessors are involved, and how to contact us about
+privacy matters.</p>
+
+<h2>1. Summary</h2>
+<p>Space Roles Manager is a <em>"Runs on Atlassian"</em> Forge app. It executes entirely inside Atlassian's
+Forge platform and Atlassian Cloud. We operate <strong>no servers, databases, or infrastructure of our own</strong>,
+and the app sends <strong>no Confluence data to any system outside Atlassian's cloud</strong>. The app acts only in
+response to an authenticated Confluence user's request, using that user's own permissions.</p>
+
+<h2>2. What data we process, and why</h2>
+<p>The app processes the following data solely to deliver its features (auditing, assigning and removing space
+roles, saving role templates, and exporting role data):</p>
+<table>
+  <thead><tr><th>Data</th><th>Used for</th><th>Stored?</th></tr></thead>
+  <tbody>
+    <tr><td>Confluence space metadata (space id, key, name)</td><td>Let you select a space to audit or manage</td><td>No — read on demand only</td></tr>
+    <tr><td>Space role definitions (role id, name, description)</td><td>Display human-readable role names</td><td>No — read on demand only</td></tr>
+    <tr><td>Space role assignments — principal identifier (account id, group id, or access class), principal type, and role id</td><td>Audit who holds which role; assign or remove roles when you request it</td><td>No — read/written on demand only</td></tr>
+    <tr><td>Limited user information (account id, display name)</td><td>Show which user holds a role</td><td>No — read on demand only</td></tr>
+    <tr><td>App configuration and role templates you create</td><td>Provide the reusable-templates feature</td><td>Yes — in Atlassian Forge Storage, scoped to your installation</td></tr>
+    <tr><td>Anonymous, aggregated usage counters (e.g. number of audits or assignments performed)</td><td>Understand which features are used, to guide development</td><td>Yes — counters only; contain no personal data and are not linked to any individual</td></tr>
+  </tbody>
+</table>
+<p>The app authenticates its Confluence requests <strong>as the signed-in user</strong>, so it can only read or
+change what that user is already permitted to. It does not act with elevated privileges on a user's behalf.</p>
+
+<h2>3. Roles and responsibilities</h2>
+<p>For the Confluence data the app reads and writes, the Atlassian customer (your organization) is the
+<strong>data controller</strong>. We act as a <strong>processor</strong>, handling that data only to provide the
+app's functionality to you.</p>
+
+<h2>4. How data is stored</h2>
+<ul>
+  <li><strong>Confluence content</strong> (spaces, role definitions, assignments, user info) is read into a
+  short-lived Forge function execution and is <strong>not retained</strong> by us after the request completes.</li>
+  <li><strong>App configuration, role templates, and anonymous usage counters</strong> are stored in
+  <strong>Atlassian Forge Storage</strong> — a key-value store provided and hosted by Atlassian — scoped to your
+  installation. We do not copy this data to any external database.</li>
+  <li>Data is <strong>encrypted in transit</strong> (TLS) and <strong>encrypted at rest</strong> by Atlassian's
+  platform. We rely on Atlassian's infrastructure security for hosting.</li>
+</ul>
+
+<h2>5. How data is used and shared</h2>
+<ul>
+  <li>We use the data <strong>only</strong> to provide the app's features to you.</li>
+  <li>We do <strong>not</strong> sell, rent, or share your data with third parties for marketing or any other purpose.</li>
+  <li>We do <strong>not</strong> transfer your Confluence data outside Atlassian's cloud.</li>
+  <li><strong>Exports</strong> (CSV/JSON) are generated within your browser/Forge session for you to download;
+  they are delivered to you and are <strong>not transmitted to us</strong>.</li>
+</ul>
+
+<h2>6. Subprocessors and third parties</h2>
+<ul>
+  <li><strong>Atlassian</strong> — the app runs on Atlassian's Forge platform and Atlassian Cloud, which host all
+  processing and storage of app data. Atlassian is the <strong>only subprocessor</strong> for data processed by the
+  app. See Atlassian's <a href="https://www.atlassian.com/trust">Trust Center</a> and
+  <a href="https://www.atlassian.com/legal/privacy-policy">Privacy Policy</a>.</li>
+  <li>The app uses <strong>no</strong> third-party analytics, advertising, error-tracking, or external
+  data-processing services.</li>
+  <li>If you contact us by email, the message and contact details you send are handled by our email provider
+  solely so we can respond to you.</li>
+</ul>
+
+<h2>7. Data retention and deletion</h2>
+<p>Stored Forge data (templates, configuration, usage counters) persists until you delete it within the app or
+uninstall the app. Uninstalling removes the app's access, and the associated Forge Storage is removed in line with
+Atlassian's data lifecycle. Because we keep no separate copies of your data, there is nothing further for us to
+delete. For questions or requests relating to email correspondence, contact us below.</p>
+
+<h2>8. Children's data</h2>
+<p>Space Roles Manager is a business administration tool and is not directed to children.</p>
+
+<h2>9. International data handling</h2>
+<p>All app data is hosted within Atlassian's cloud and is subject to Atlassian's data residency and
+cross-border transfer practices. We introduce no additional storage locations.</p>
+
+<h2>10. Changes to this policy</h2>
+<p>We may update this policy from time to time. The "Last updated" date above reflects the current version, and
+material changes will be published on this page.</p>
+
+<h2>11. Contact</h2>
+<p>For privacy questions or requests, contact:
+<strong><a href="mailto:therealluma15@gmail.com">therealluma15@gmail.com</a></strong>.
+We aim to respond within 5 business days.</p>
+
+<footer>Space Roles Manager is an independent Atlassian Marketplace app and is not affiliated with or endorsed by Atlassian. Atlassian, Confluence, and Forge are trademarks of Atlassian.</footer>
+</body>
+</html>

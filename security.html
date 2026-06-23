@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Space Roles Manager — Security Policy</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+         max-width: 820px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; color: #1a1a1a; background: #fff; }
+  @media (prefers-color-scheme: dark) { body { color: #e6e6e6; background: #121212; } a { color: #6db3ff; } code { background:#222; } th { background:#1d1d1d; } td,th{border-color:#333;} }
+  h1 { font-size: 1.9rem; margin-bottom: .25rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.2rem; border-bottom: 1px solid #e2e2e2; padding-bottom: .3rem; }
+  .updated { color: #666; font-size: .9rem; margin-top: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
+  th, td { border: 1px solid #ddd; padding: .5rem .65rem; text-align: left; vertical-align: top; }
+  th { background: #f5f5f5; }
+  code { background: #f2f2f2; padding: .1rem .35rem; border-radius: 4px; font-size: .9em; }
+  nav a { margin-right: 1rem; }
+  footer { margin-top: 3rem; color: #777; font-size: .85rem; border-top: 1px solid #e2e2e2; padding-top: 1rem; }
+</style>
+</head>
+<body>
+<nav><a href="./index.html">Home</a><a href="./privacy.html">Privacy Policy</a><a href="./security.html">Security Policy</a></nav>
+
+<h1>Security Policy — Space Roles Manager</h1>
+<p class="updated">Last updated: 23 June 2026</p>
+
+<p>This page describes how <strong>the Lumas Forgery team</strong> ("we", "us") secures Space Roles Manager
+— an Atlassian Forge app for Confluence Cloud — and how to report a security issue.</p>
+
+<h2>1. Architecture and hosting</h2>
+<p>Space Roles Manager is a <em>"Runs on Atlassian"</em> Forge app. It runs <strong>entirely within Atlassian's
+Forge platform</strong>; we operate no servers, databases, or infrastructure of our own. The underlying compute,
+network, storage, runtime isolation, patching, and physical security are therefore managed by Atlassian under their
+security program. The app makes <strong>no network calls to systems outside Atlassian's cloud</strong> (no external
+egress).</p>
+
+<h2>2. Reporting a security issue</h2>
+<p>If you discover a security vulnerability in Space Roles Manager, please report it to
+<strong><a href="mailto:therealluma15@gmail.com">therealluma15@gmail.com</a></strong>. Please include steps to
+reproduce, the affected area, and the potential impact. We ask that you give us a reasonable opportunity to
+remediate before any public disclosure, and that your testing does not access, modify, or destroy data belonging
+to others, or degrade the service. We do not currently operate a paid bug-bounty program, but we are grateful for
+responsible disclosure.</p>
+
+<h2>3. Vulnerability management</h2>
+<ul>
+  <li><strong>Acknowledgement</strong> — we aim to acknowledge a report within <strong>2 business days</strong>.</li>
+  <li><strong>Triage</strong> — we assess each report for severity and exploitability (impact × likelihood) and
+  prioritize accordingly.</li>
+  <li><strong>Remediation</strong> — we fix confirmed vulnerabilities within the timeframes defined by the
+  <a href="https://developer.atlassian.com/platform/marketplace/security-bugfix-policy/">Atlassian Marketplace
+  Security Bug Fix Policy</a>, prioritized by severity (Critical → High → Medium → Low). Fixes are deployed to the
+  Forge production environment, from which all installations are served.</li>
+  <li><strong>Sources</strong> — in addition to direct reports, we act on issues surfaced by Atlassian's automated
+  Forge security checks (e.g. the Marketplace security scanner / FSRT), Atlassian security advisories, and
+  dependency vulnerability scanning.</li>
+</ul>
+
+<h2>4. Security incident handling</h2>
+<p>If a security incident affects the app, our process is to:</p>
+<ol>
+  <li><strong>Contain</strong> — deploy a fix or, where necessary, request that the affected app version be disabled.</li>
+  <li><strong>Assess</strong> — determine the scope, the data involved, and the impact.</li>
+  <li><strong>Remediate &amp; verify</strong> — ship and confirm the fix.</li>
+  <li><strong>Notify</strong> — inform affected customers and Atlassian as required, and cooperate with Atlassian's
+  security team throughout.</li>
+</ol>
+
+<h2>5. Technical and organizational controls</h2>
+
+<h3>Access control and authorization</h3>
+<ul>
+  <li>The app requests <strong>least-privilege</strong> OAuth scopes — only the Confluence permissions needed to
+  read and manage space roles.</li>
+  <li>The app authenticates Confluence requests <strong>as the signed-in user</strong>, so Confluence enforces each
+  user's own permissions. Non-administrators cannot perform privileged actions through the app.</li>
+  <li>Source code is held in a <strong>private repository</strong> with access limited to authorized maintainers.</li>
+  <li>Deployments are performed only via the authenticated Atlassian Forge CLI using API tokens.
+  <strong>Multi-factor authentication</strong> is enforced on the developer's Atlassian and source-control accounts.</li>
+</ul>
+
+<h3>Data protection</h3>
+<ul>
+  <li><strong>No customer data is stored outside Atlassian.</strong> App configuration, role templates, and
+  anonymous usage counters live in Atlassian Forge Storage, scoped to each installation.</li>
+  <li>Data is <strong>encrypted in transit</strong> (TLS) and <strong>encrypted at rest</strong> by Atlassian's
+  platform.</li>
+  <li>The app handles no passwords or credentials and does not log personal Confluence content.</li>
+</ul>
+
+<h3>Monitoring and logging</h3>
+<ul>
+  <li>We use Atlassian Forge's platform logging and metrics to observe app behavior and investigate issues.</li>
+  <li>We monitor Atlassian's developer and security communications and Marketplace security findings.</li>
+</ul>
+
+<h3>Secure development</h3>
+<ul>
+  <li>Changes are reviewed and tested before deployment.</li>
+  <li>Dependencies are kept up to date and scanned for known vulnerabilities.</li>
+  <li>Each release is validated against Atlassian's Forge security checks prior to submission.</li>
+</ul>
+
+<h2>6. Shared responsibility</h2>
+<p>Platform-level security — infrastructure, networking, physical security, runtime isolation, and storage
+encryption — is provided by <strong>Atlassian</strong> under their security and compliance programs (see the
+<a href="https://www.atlassian.com/trust">Atlassian Trust Center</a>). Our responsibility covers the security of
+the app's code, configuration, requested scopes, and our handling of vulnerability reports and incidents.</p>
+
+<h2>7. Security contact</h2>
+<p><strong><a href="mailto:therealluma15@gmail.com">therealluma15@gmail.com</a></strong></p>
+
+<footer>Space Roles Manager is an independent Atlassian Marketplace app and is not affiliated with or endorsed by Atlassian. Atlassian, Confluence, and Forge are trademarks of Atlassian.</footer>
+</body>
+</html>
